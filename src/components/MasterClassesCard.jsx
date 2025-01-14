@@ -9,7 +9,7 @@ export const MasterClassesCard = ({ key, title, author, description, photo, styl
             <div className={`rounded-sm overflow-hidden h-full`}>
             <img
                 src={photo}
-                className={`object-cover lg:max-h-48 w-full min-h-48 bg-black transition-all duration-300 `}
+                className={`object-cover scale-110 group-hover:scale-100 lg:max-h-48 w-full min-h-48 bg-black transition-all duration-500 `}
                 onError={(e) => console.error('Error loading image:', e.target.src)}
                 onLoad={() => console.log('Image loaded:', photo)}
             />

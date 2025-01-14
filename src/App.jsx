@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen mx-auto text-gray relative">
-      <div className='absolute animate-opacity -z-50 inset-0 mx-auto w-full max-w-screen-md  bg-accent/5 rounded-full blur-2xl'></div>
+      <div className='absolute animate-opacity -z-50 inset-0 mx-auto w-full max-w-screen-md bg-accent/5 rounded-full blur-2xl'></div>
         <Header/>
         <main>
           <MainSection/>
