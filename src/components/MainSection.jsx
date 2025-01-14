@@ -24,7 +24,7 @@ export const MainSection = () => {
             Применяйте новые знания в учебе, работе или своих проектах — начните развивать цифровое будущее вместе с нами!
           </p>
           <div className='flex flex-col sm:flex-row gap-4 w-full font-normal text-sm sm:text-md justify-center px-6'>
-            <Button href={'#master-classes'} styles='py-4 border-none text-white bg-accent px-12 hover:border-white hover:bg-white hover:text-accent duration-300 transition-all ease' text='Записаться!'/>
+            <Button href={'#master-classes'} styles='py-4 border-none text-white bg-accent px-12 hover:border-white hover:bg-white hover:text-accent duration-300 transition-all ease' text='Узнать больше!'/>
             <Button href={'#'} styles='py-4 border-accent text-accent bg-transparent px-12 hover:bg-accent hover:text-white duration-300 transition-all ease' text='О нас'/>
           </div>
 
