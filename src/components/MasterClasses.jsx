@@ -35,6 +35,17 @@ export const fetchSpreadsheetData = async () => {
 export const MasterClasses = () => {
     const [classes, setClasses] = useState([]);
 
+    const [modalData, setModalData] = useState({ isOpen: false, title: '', description: '', photo: '', author: '' });
+
+    const handleCardClick = (data) => {
+        setModalData({ isOpen: true, title: data.title, description: data.description, photo: data.photo, author: data.author });
+    };
+
+    const handleCloseModal = () => {
+        setModalData({ ...modalData, isOpen: false });
+        console.log(modalData)
+    };
+
     useEffect(() => {
         const loadData = async () => {
             try {
@@ -95,7 +106,7 @@ export const MasterClasses = () => {
     let displayedColumns = screenSize === 'xs' ? [classes] : (screenSize === 'sm' ? classesColumns2 : classesColumns3);
 
     return (
-        <section className="bg-black py-12">
+        <section id='master-classes' className="bg-black py-12">
             <div className="max-w-screen-xs-container sm:max-w-screen-sm mx-auto lg:max-w-screen-lg">
                 <h2 className="font-black text-3xl text-white leading-normal text-center">
                     Популярные мастер-классы ФИТ
@@ -104,27 +115,30 @@ export const MasterClasses = () => {
                 {displayedColumns.map((classesColumn) => (
                     <ul className="flex flex-col gap-6 mt-6 ">
                         {classesColumn.map((item) => (
-                            <MasterClassesCard
-                                key={item.id}
-                                title={item.title}
-                                author={item.author}
-                                description={item.description}
-                                materials={item.materials}
-                                photo={item.imageUrl}
-                                // styles={[isSmallScreen 
-                                //     ? item.id % 5 == 0 && classes.length-item.id > 2 ? ' col-span-2 ' : ' col-span-1 '
-                                //     : item.id == 1 || item.id == 2 ? ' col-span-3 ' : ' col-span-2 ',
-                                //        item.imageUrl != null 
-                                //     ? ' row-span-2 '
-                                //     : ' row-span-1 ']
-                                // }
-                            />
+                            <li>
+                                <MasterClassesCard
+                                    key={item.id}
+                                    title={item.title}
+                                    author={item.author}
+                                    description={item.description}
+                                    materials={item.materials}
+                                    photo={item.imageUrl}
+                                    onCardClick={handleCardClick}
+                                />
+                            </li>
                         ))}
                     </ul>
                 ))}
                 </div>
             </div>
-            <Modal/>
+            <Modal
+                isOpen={modalData.isOpen}
+                onClose={handleCloseModal}
+                title={modalData.title}
+                description={modalData.description}
+                photo={modalData.photo}
+                author={modalData.author}
+            />
         </section>
   )
 }
