@@ -27,9 +27,9 @@ export const Footer = () => {
               <input required type="email" name="email" id="email" placeholder='Ваша почта' className='relative text-accent rounded-l-full placeholder:text-text2 bg-transparent border-[#565E6C] py-3 px-5 border'/>
               <button type='submit' className='py-3 px-5 rounded-r-full bg-accent border border-accent text-white'>Подписаться</button>
             </form>
-            <div className='flex flex-row items-center justify-between w-full'>
-              <a href="#" className='inline-flex gap-4 items-center'>
-                  <img src={Logo} alt="Logo" className='max-w-12 w-full'/>
+            <div className='flex flex-row items-center justify-between w-full '>
+              <a href="#" className='inline-flex gap-4 items-center group'>
+                  <img src={Logo} alt="Logo" className='max-w-12 w-full duration-300 transition-all ease-in-out group-hover:rotate-45'/>
                   <img src={Logo2} alt="Logo" className='max-w-64 w-full'/>
               </a>
               <nav className='flex flex-col text-end text-sm'>
